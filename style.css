@@ -1,0 +1,297 @@
+/* Base Reset and Global Smoothness */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* A fluid background that breathes slowly through soft pastels */
+body {
+    background: linear-gradient(-45deg, #e4ede9, #e2ebf2, #f7e8ec, #fcf8e8);
+    background-size: 400% 400%;
+    animation: breathingGradient 18s ease infinite;
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #354039;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@keyframes breathingGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Container: Transparent frosted glass effect */
+.container {
+    width: 100%;
+    max-width: 640px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(142, 157, 148, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #3b4740;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+p.subtitle {
+    color: #5c6e63;
+    margin-bottom: 35px;
+    font-size: 1.05rem;
+}
+
+/* The Core Input Card */
+.input-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.01);
+    margin-bottom: 40px;
+    border: 1px solid rgba(220, 230, 224, 0.6);
+}
+
+textarea {
+    width: 100%;
+    height: 140px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: #2b332e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+textarea::placeholder {
+    color: #abbcb1;
+}
+
+/* Clean up alignment inside the input card */
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f7f5;
+    padding-top: 18px;
+}
+
+.char-counter {
+    font-size: 0.95rem;
+    color: #8da094;
+    font-weight: 500;
+}
+
+/* FIXED: Premium, Organic Pill-Shaped Button */
+.main-btn {
+    display: inline-block;
+    background-color: #a2bfa0; /* Soothing pastel sage */
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px; /* Forces full oval/pill curves */
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(162, 191, 160, 0.4);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-decoration: none;
+}
+
+.main-btn:hover {
+    background-color: #8fa88d;
+    transform: translateY(-2px); /* Soft float effect */
+    box-shadow: 0 6px 20px rgba(162, 191, 160, 0.55);
+}
+
+/* Dynamic Pricing Selector Box (Warm Creamy Yellow Vibe) */
+.pricing-selector-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(254, 250, 230, 0.8); /* Soft Cream Pastel */
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(240, 231, 194, 0.9);
+    gap: 12px;
+}
+
+.pricing-selector-box label {
+    font-size: 0.95rem;
+    color: #4a544e;
+    font-weight: 500;
+}
+
+/* FIXED: Soft, Custom Pastel Dropdown Menu */
+.pastel-select {
+    padding: 10px 16px;
+    border-radius: 20px; /* Smooth rounded corners */
+    border: 1px solid #e1eade;
+    background-color: #ffffff;
+    color: #3b453f;
+    outline: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.pastel-select:hover {
+    border-color: #c4d4c0;
+    background-color: #fafdfa;
+}
+
+.price-badge {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3b423d;
+    background: #ffffff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid #e6ede9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+}
+
+/* Sections Structure */
+.booking-container, .feed-container {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(215, 224, 219, 0.6);
+    text-align: left;
+}
+
+.booking-container h2, .feed-container h2 {
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: #3c4741;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+/* Cloud-like Slot Buttons (Baby Blue) */
+.slot-btn {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(214, 227, 235, 0.8);
+    color: #435059;
+    border-radius: 25px; /* Pill layout */
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.01);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    font-weight: 500;
+}
+
+.slot-btn:hover:not(:disabled) {
+    background-color: #e3eff7; /* Peaceful baby blue fill */
+    border-color: #bcccda;
+    color: #243038;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(197, 218, 240, 0.5);
+}
+
+.slot-btn.booked {
+    background-color: rgba(230, 235, 232, 0.6);
+    color: #a4b2aa;
+    cursor: not-allowed;
+    border: 1px dashed #cbd5ce;
+}
+
+/* Secure Confirmation Box */
+.booking-box {
+    background: #edf5f1;
+    border: 1px solid #cadcd0;
+    padding: 22px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+/* Dynamic Feed Vent Cards (Muted Pink Signatures) */
+.vent-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.01);
+    border-left: 5px solid #ebd3da; /* Gentle Signature Pink Line */
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #2c332f;
+    animation: fadeIn 0.4s ease;
+}
+
+.reply-item {
+    font-size: 0.95rem;
+    background: #fcf9fa;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-top: 10px;
+    color: #524447;
+    border-left: 3px solid #d9b8c1;
+}
+
+.reply-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    border-top: 1px dashed #e7ede9;
+    padding-top: 16px;
+}
+
+.reply-form input {
+    flex: 1;
+    border: 1px solid #dee5e1;
+    background: #fafcfa;
+    padding: 12px 18px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.reply-form button {
+    padding: 8px 22px;
+    background-color: #8fa38b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.reply-form button:hover {
+    background-color: #768773;
+}
+
+.loading-text {
+    text-align: center;
+    color: #7b8c82;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
